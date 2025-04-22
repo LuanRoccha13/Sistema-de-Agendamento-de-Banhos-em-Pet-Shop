@@ -140,16 +140,6 @@ petshop-agendamentos/
 - Preview da imagem antes do upload
 - Dashboard com estatísticas visuais
 
-## 🖼 Prints do Projeto
-### Login:
-![Login](prints/login.png)
-
-### Formulário de Agendamento:
-![Agendamento](prints/formulario.png)
-
-### Dashboard:
-![Dashboard](prints/dashboard.png)
-
 ## 📦 Exportação do Banco
 O arquivo `banco_petshop.sql` está incluído no projeto com a estrutura completa do banco de dados.
 
