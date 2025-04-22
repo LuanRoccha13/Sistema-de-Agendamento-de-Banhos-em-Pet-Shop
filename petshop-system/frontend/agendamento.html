@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Agendar Banho</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Agendar Banho</h2>
+    <form id="formAgendamento" enctype="multipart/form-data">
+      <input type="text" name="nome_pet" placeholder="Nome do Pet" required />
+      <input type="text" name="raca" placeholder="Raça" required />
+      <input type="date" name="data" required />
+      <input type="time" name="horario" required />
+      <textarea name="observacoes" placeholder="Observações"></textarea>
+      <input type="file" name="imagem" id="imagem" required />
+      <img id="preview" src="#" alt="Preview da Imagem" style="display:none; max-width: 150px; margin: 10px 0;" />
+      <button type="submit">Agendar</button>
+    </form>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
