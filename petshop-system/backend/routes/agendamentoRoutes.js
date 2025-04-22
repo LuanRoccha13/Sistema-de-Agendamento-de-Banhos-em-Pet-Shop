@@ -1,19 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
 const agendamentoController = require('../controllers/agendamentoController');
-const autenticar = require('../middlewares/authMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
+const multer = require('multer');
 
+const path = require('path');
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, 'petshop-system/back-end/uploads'),
+  destination: (req, file, cb) => cb(null, path.join(__dirname, '../uploads')),
   filename: (req, file, cb) => cb(null, Date.now() + '-' + file.originalname)
 });
 
+
 const upload = multer({ storage });
 
-router.post('/', autenticar, upload.single('imagem'), agendamentoController.criar);
-router.get('/', autenticar, agendamentoController.listar);
-router.put('/:id', autenticar, upload.single('imagem'), agendamentoController.atualizar);
-router.delete('/:id', autenticar, agendamentoController.deletar);
+router.post('/', authMiddleware, upload.single('imagem'), agendamentoController.criarAgendamento);
+router.get('/', authMiddleware, agendamentoController.listarAgendamentos);
 
 module.exports = router;
